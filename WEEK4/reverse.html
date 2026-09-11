@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reverse Each Word</title>
+</head>
+
+<body>
+
+    <h2>4. Reverse Each Word in a String</h2>
+
+    <label>Enter String:</label>
+    <input type="text" id="string">
+    <button onclick="runProgram()">Run</button>
+
+    <p id="output"></p>
+
+    <script>
+        function reverseWords(str) {
+            let words = str.split(" ");
+
+            let result = words.map(function (word) {
+                return word.split("").reverse().join("");
+            });
+
+            return result.join(" ");
+        }
+
+        function runProgram() {
+            let str = document.getElementById("string").value;
+
+            document.getElementById("output").textContent =
+                reverseWords(str);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Validate Username</title>
+</head>
+
+<body>
+
+    <h2>2. Validate a 10-Character Username</h2>
+
+    <label>Enter Username:</label>
+    <input type="text" id="username">
+    <button onclick="runProgram()">Run</button>
+
+    <p id="output"></p>
+
+    <script>
+        function validateUsername(username) {
+            let pattern = /^[0-9].{8}[A-Za-z]$/;
+
+            if (pattern.test(username)) {
+                return "Valid Username";
+            } else {
+                return "Invalid Username";
+            }
+        }
+
+        function runProgram() {
+            let username = document.getElementById("username").value;
+
+            document.getElementById("output").textContent =
+                validateUsername(username);
+        }
+    </script>
+
+</body>
+
+</html>
