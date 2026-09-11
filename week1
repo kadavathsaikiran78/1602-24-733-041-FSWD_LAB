@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: lightblue;
+        }
+        .day {
+            font-weight: bold;
+            background-color: lightgray;
+        }
+        .lunch {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .lab {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+  
+<h1>VASAVI COLLEGE OF ENGINEERING</h1>
+<h3>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</h3>
+<h3>CLASS TIMETABLE - B.E. V SEMESTER (CSE-A)</h3>
 
+<table>
+    <tr>
+        <th>Day / Time</th>
+        <th>9:40 - 10:40</th>
+        <th>10:40 - 11:40</th>
+        <th>11:40 - 12:40</th>
+        <th>12:40 - 1:20</th>
+        <th>1:20 - 2:20</th>
+        <th>2:20 - 3:20</th>
+        <th>3:20 - 4:20</th>
+    </tr>
+
+    <tr>
+        <td class="day">MON</td>
+        <td colspan="3" class="lab">IoT Lab [Lab-IV]</td>
+        <td rowspan="6" class="lunch">LUNCH</td>
+        <td>OE</td>
+        <td>IoT</td>
+        <td>CN</td>
+    </tr>
+
+    <tr>
+        <td class="day">TUE</td>
+        <td>AI</td>
+        <td colspan="2">SDC-V (CS-II)</td>
+        <td>OE</td>
+        <td>CN</td>
+        <td>Sports / FSWD</td>
+    </tr>
+
+    <tr>
+        <td class="day">WED</td>
+        <td>DT</td>
+        <td>AI</td>
+        <td>IoT</td>
+        <td>OE</td>
+        <td colspan="2" class="lab">AIML Lab [Lab-V]</td>
+    </tr>
+
+    <tr>
+        <td class="day">THU</td>
+        <td>CN</td>
+        <td colspan="2" class="lab">CN Lab [Project Lab]</td>
+        <td colspan="2">SDC-VI (TS-III)</td>
+        <td>DT</td>
+    </tr>
+
+    <tr>
+        <td class="day">FRI</td>
+        <td>IoT</td>
+        <td>AI</td>
+        <td>CN (T)</td>
+        <td>FSWD</td>
+        <td colspan="2" class="lab">FSWD Lab [Project Lab]</td>
+    </tr>
+
+    <tr>
+        <td class="day">SAT</td>
+        <td>FSWD</td>
+        <td colspan="2" class="lab">TBP-I / CISCO [Lab-V]</td>
+        <td colspan="2">ECA-II</td>
+        <td>IoT</td>
+    </tr>
+</table>
+
+</body>
+</html>
