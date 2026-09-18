@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Calculator</title>
+</head>
+<body>
+
+<h2>Calculator Using Callback Function</h2>
+
+<script>
+function calculate(a, b, operator, callback) {
+    callback(a, b, operator);
+}
+
+function performOperation(a, b, operator) {
+    let result;
+
+    switch (operator) {
+        case "+":
+            result = a + b;
+            break;
+
+        case "-":
+            result = a - b;
+            break;
+
+        case "*":
+            result = a * b;
+            break;
+
+        case "/":
+            if (b === 0) {
+                console.log("Cannot divide by zero");
+                document.write("Cannot divide by zero");
+                return;
+            }
+            result = a / b;
+            break;
+
+        default:
+            console.log("Invalid operator");
+            document.write("Invalid operator");
+            return;
+    }
+
+    console.log("Result: " + result);
+    document.write("Result: " + result);
+}
+
+let num1 = Number(prompt("Enter first number:"));
+let num2 = Number(prompt("Enter second number:"));
+let operator = prompt("Enter operator (+, -, *, /):");
+
+calculate(num1, num2, operator, performOperation);
+</script>
+
+</body>
+</html>

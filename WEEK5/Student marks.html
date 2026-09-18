@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+</head>
+<body>
+
+<h2>Student Marks</h2>
+
+<script>
+let students = [
+    {name: 'Akash', marks: 35},
+    {name: 'vishal', marks: 78},
+    {name: 'prakash', marks: 42},
+    {name: 'Sunny', marks: 90}
+];
+
+let marks = students.map(student => student.marks);
+
+let total = marks.reduce((sum, mark) => sum + mark, 0);
+
+let average = total / marks.length;
+
+let passedStudents = students.filter(student => student.marks >= 40);
+
+document.write("Class Average: " + average + "<br><br>");
+
+document.write("Passed Students:<br>");
+
+passedStudents.forEach(student => {
+    document.write(student.name + " - " + student.marks + "<br>");
+});
+
+console.log("Class Average:", average);
+console.log("Passed Students:", passedStudents);
+</script>
+
+</body>
+</html>

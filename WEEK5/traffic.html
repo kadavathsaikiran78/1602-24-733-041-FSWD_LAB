@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Light</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        #light {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 30px auto;
+            background-color: gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Traffic Light System</h2>
+
+<div id="light"></div>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+<p id="message">Press Start</p>
+
+<script>
+let timer;
+let running = false;
+
+let light = document.getElementById("light");
+let message = document.getElementById("message");
+
+function changeLight(color, callback) {
+    light.style.backgroundColor = color;
+    message.textContent = color;
+
+    timer = setTimeout(callback, 2000);
+}
+
+function trafficLight() {
+    if (!running) {
+        return;
+    }
+
+    changeLight("red", function() {
+        if (!running) {
+            return;
+        }
+
+        changeLight("green", function() {
+            if (!running) {
+                return;
+            }
+
+            changeLight("yellow", function() {
+                if (!running) {
+                    return;
+                }
+
+                trafficLight();
+            });
+        });
+    });
+}
+
+document.getElementById("start").addEventListener("click", function() {
+    if (!running) {
+        running = true;
+        trafficLight();
+    }
+});
+
+document.getElementById("stop").addEventListener("click", function() {
+    running = false;
+    clearTimeout(timer);
+    light.style.backgroundColor = "gray";
+    message.textContent = "Stopped";
+});
+</script>
+
+</body>
+</html>

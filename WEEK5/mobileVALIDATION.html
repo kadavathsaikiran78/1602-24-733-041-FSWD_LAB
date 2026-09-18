@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+
+<h2>Mobile Number Validation</h2>
+
+<script>
+let mobile = prompt("Enter a 10-digit mobile number:");
+
+let pattern = /^[6-9][0-9]{9}$/;
+
+if (pattern.test(mobile)) {
+    console.log("Valid mobile number");
+    document.write("Valid mobile number");
+} else {
+    console.log("Invalid mobile number");
+    document.write("Invalid mobile number");
+}
+</script>
+
+</body>
+</html>

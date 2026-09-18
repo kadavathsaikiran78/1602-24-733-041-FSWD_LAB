@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Tracking Async Await</title>
+</head>
+<body>
+
+<h2>Order Tracking Using Async/Await</h2>
+
+<script>
+function orderPlaced() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log("Order Placed");
+            document.write("Order Placed<br>");
+            resolve();
+        }, 1000);
+    });
+}
+
+function orderShipped() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log("Order Shipped");
+            document.write("Order Shipped<br>");
+            resolve();
+        }, 1000);
+    });
+}
+
+function orderDelivered() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log("Order Delivered");
+            document.write("Order Delivered<br>");
+            resolve();
+        }, 1000);
+    });
+}
+
+async function trackOrder() {
+    await orderPlaced();
+    await orderShipped();
+    await orderDelivered();
+}
+
+trackOrder();
+</script>
+
+</body>
+</html>
